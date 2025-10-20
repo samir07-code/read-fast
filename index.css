@@ -1,0 +1,328 @@
+:root {
+    --primary-light: rgb(255, 255, 255);
+    --text-light: black;
+
+    --primary-dark: rgb(30, 30, 30);
+    --text-dark: white;
+
+}
+
+
+.unsel {
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background-color: var(--primary-light);
+    color: var(--text-light);
+}
+
+html[data-darkmode="true"], body[data-darkmode="true"] {
+    background-color: var(--primary-dark);
+    color: var(--text-dark);
+}
+
+#darkmode {
+    top: 1em;
+    left: 10px;
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    border-radius: 1em;
+    background-color: blue;
+    overflow: hidden;
+    
+    transition: background-color 800ms;
+}
+#darkmode:hover {
+    cursor: pointer;
+}
+
+#darkmode #celestialBody {
+    r: 30%;
+    cx: 50%;
+    cy: 50%;
+    fill: yellow;
+    transition: fill 800ms;
+}
+
+#darkmode #shadow {
+    r: 40%;
+    cx: 140%;
+    cy: 30%;
+    fill: blue;
+    transition: all 800ms;
+}
+
+#darkmode rect {
+    width: 4px;
+    height: 5px;
+    fill: yellow;
+    y: 35%;
+    x: -2px;
+    transform: translate(50%, 50%) rotate(var(--angle));
+    transition: all 800ms;
+}
+
+body[data-darkmode="true"] #darkmode {
+    background-color: black;
+}
+
+body[data-darkmode="true"] #darkmode #celestialBody {
+    fill: grey;
+}
+
+body[data-darkmode="true"] #darkmode #shadow {
+    cx: 83%;
+    cy: 37%;
+    fill: black;
+}
+
+body[data-darkmode="true"] #darkmode rect {
+    y: 55%;
+    fill: black;
+}
+
+
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#input {
+    width: 80%;
+    height: 50%;
+    margin: 5% auto;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+body[data-darkmode="true"] #input {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #555555;
+}
+
+p {
+    text-align: center;
+    font-size: 16px;
+}
+
+#speed {
+    width: 60px;
+    font-size: 16px;
+}
+
+body[data-darkmode="true"] #speed {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #555555;
+}
+
+#btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#btn:hover {
+    background-color: #45a049;
+}
+
+#btn:active {
+    background-color: #3e8e41;
+}
+
+#btn:disabled {
+    background-color: #444444;
+    cursor: not-allowed;
+}
+
+#output {
+    text-align: center;
+    margin-top: 20px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 70%;
+    height: 70%;
+
+    display: flex;
+    justify-content: center;
+
+    background-color: white;
+    box-shadow: 0 0 10px black;
+
+    border-radius: 10px;
+    
+    transition: top 0.5s ease-in-out;
+
+    overflow: hidden;
+}
+
+body[data-darkmode="true"] #output {
+    background-color: #222222;
+    box-shadow: 0 0 10px white;
+}
+
+#output.hidden {
+    top: 150%;
+}
+
+#word {
+    position: absolute;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+#speedDisplay {
+    margin-top: 10px;
+    font-size: 24px;
+    position: absolute;
+    bottom: 100px;
+}
+
+#timer {
+    margin-top: 10px;
+    font-size: 24px;
+    position: absolute;
+    bottom: 80px;
+}
+
+#controls {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+#controls input {
+    margin: 0 10px;
+}
+
+#controls input:active {
+    transform: scale(0.95);
+}
+#controls input:hover {
+    transform: scale(1.1);
+}
+
+#speedInput {
+    width: 60px;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+#output button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#pause {
+    margin-left: 20px;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #f0ad4e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#reset {
+    margin-left: 20px;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#increase {
+    margin-left: 20px;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #5bc0de;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#decrease {
+    margin-left: 20px;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #5bc0de;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#progressBarContainer {
+    width: 102%;
+    height: 10px;
+    background-color: #e0e0e0;
+    overflow: hidden;
+
+    bottom: 0px;
+    left: 0px;
+
+    position: absolute;
+}
+
+body[data-darkmode="true"] #progressBarContainer {
+    background-color: #444444;
+}
+
+#progressBar {
+    width: 0%;
+    height: 100%;
+    background-color: #4CAF50;
+    transition: width 0.2s;
+}
+
+#closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#closeBtn:hover {
+    background-color: darkred;
+}

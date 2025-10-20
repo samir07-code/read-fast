@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="index.css">
+    <title>Read Fast!</title>
+</head>
+<body>
+    <h1>Read Fast!</h1>
+
+    <textarea id="input" placeholder="Paste text here..."></textarea>
+    <p>Speed (wpm): <input type="number" id="speed" placeholder="200" min="20"/></p>
+    <input type="button" id="btn" value="Submit"/>
+
+    <svg id="darkmode">
+        <circle id="celestialBody" />
+        <circle id="shadow" />
+        <rect/> <rect/> <rect/> <rect/>
+        <rect/> <rect/> <rect/> <rect/>
+    </svg>
+
+
+    <div id="output" class="hidden">
+        <p id="word"></p>
+        <p id="speedDisplay"></p>
+        <div id="progressBarContainer">
+            <div id="progressBar"></div>
+        </div>
+        <div id="timer">00:00</div>
+        <div id="controls">
+            <input type="button" id="pause" value="⏸"/>
+            <input type="button" id="reset" value="↺"/>
+            <input type="button" id="increase" value="+"/>
+            <input type="button" id="decrease" value="-"/>
+        </div>
+        <button id="closeBtn">X</button>
+    </div>
+    <script src="darkmode.js"></script>
+    <script src="index.js"></script>
+</body>
