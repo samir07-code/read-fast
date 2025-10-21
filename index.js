@@ -22,11 +22,13 @@ let speed = 200; // default WPM
 increaseBtn.addEventListener('click', () => {
     speed += 20;
     speedInput.value = speed;
+    speedDisplay.textContent = `Speed: ${speed} WPM`;
 });
 
 decreaseBtn.addEventListener('click', () => {
     speed = Math.max(20, speed - 20);
     speedInput.value = speed;
+    speedDisplay.textContent = `Speed: ${speed} WPM`;
 });
 
 
