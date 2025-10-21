@@ -37,9 +37,6 @@ let canClickSubmit = true;
 submitBtn.addEventListener('click', () => {
     if (!canClickSubmit) return;
 
-    submitBtn.disabled = true;
-    canClickSubmit = false;
-    
     const text = input.value;
     speed = parseInt(speedInput.value) || 200;
     
@@ -47,6 +44,10 @@ submitBtn.addEventListener('click', () => {
         alert('Please enter some text to read.');
         return;
     }
+
+    submitBtn.disabled = true;
+    canClickSubmit = false;
+
 
     const words = text.split(/\s+/);
     let index = 0;
