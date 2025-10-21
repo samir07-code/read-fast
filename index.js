@@ -39,7 +39,7 @@ submitBtn.addEventListener('click', () => {
 
     const text = input.value;
     speed = parseInt(speedInput.value) || 200;
-    
+
     if (!text) {
         alert('Please enter some text to read.');
         return;
@@ -89,7 +89,7 @@ submitBtn.addEventListener('click', () => {
         
         output.textContent = "-";
         speedDisplay.textContent = "Speed: - WPM";
-        timer.textContent = "00:00";
+        timer.textContent = "00:00:000";
         progressBar.style.width = `0%`;
 
         outputDiv.classList.add(hiddenClass);
@@ -113,6 +113,8 @@ submitBtn.addEventListener('click', () => {
         return `${minutes}:${seconds.toString().padStart(2, '0')}:${(ms % 1000).toString().padStart(3, '0')}`;
     }
 
+
+    output.textContent = words[index];
 
     let timerInterval;
     setTimeout(() => {
@@ -140,5 +142,5 @@ submitBtn.addEventListener('click', () => {
             speedDisplay.textContent = `Speed: ${speed} WPM`;
             progressBar.style.width = `${(index / words.length) * 100}%`;
         }, 50);
-    }, 1000);
+    }, 1500);
 });
