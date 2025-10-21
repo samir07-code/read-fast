@@ -4,10 +4,10 @@
     <title>Read Fast!</title>
 </head>
 <body>
-    <h1>Read Fast!</h1>
+    <h1 class="unsel">Read Fast!</h1>
 
     <textarea id="input" placeholder="Paste text here..."></textarea>
-    <p>Speed (wpm): <input type="number" id="speed" placeholder="200" min="20"/></p>
+    <p class="unsel">Speed (wpm): <input type="number" id="speed" placeholder="200" min="20"/></p>
     <input type="button" id="btn" value="Submit"/>
 
     <svg id="darkmode">
@@ -18,7 +18,7 @@
     </svg>
 
 
-    <div id="output" class="hidden">
+    <div class="unsel hidden" id="output">
         <p id="word"></p>
         <p id="speedDisplay"></p>
         <div id="progressBarContainer">
