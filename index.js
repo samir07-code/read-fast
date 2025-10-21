@@ -138,6 +138,6 @@ submitBtn.addEventListener('click', () => {
 
             speedDisplay.textContent = `Speed: ${speed} WPM`;
             progressBar.style.width = `${(index / words.length) * 100}%`;
-        }, 100);
+        }, 50);
     }, 1000);
 });
